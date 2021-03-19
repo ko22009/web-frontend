@@ -1,6 +1,7 @@
 import React, { ChangeEvent, createRef, DragEvent, MouseEvent } from "react";
 import "./DragAndDrop.css";
-import { FormFile } from "react-bootstrap";
+import { Button, Col, FormFile, Row } from "react-bootstrap";
+import axios from "axios";
 
 type Props = {};
 type State = {
@@ -20,6 +21,8 @@ export default class DragAndDrop extends React.Component<Props, State> {
     this.openLoadFile = this.openLoadFile.bind(this);
     this.previewFile = this.previewFile.bind(this);
     this.removeItem = this.removeItem.bind(this);
+    this.uploadImage = this.uploadImage.bind(this);
+    this.loadFiles = this.loadFiles.bind(this);
     this.state = {
       inDropZone: false,
       fileList: [],
@@ -49,6 +52,9 @@ export default class DragAndDrop extends React.Component<Props, State> {
   }
   loadFiles(files: File[]) {
     if (!files?.length) return;
+    if (this.file.current) {
+      this.file.current.value = "";
+    }
     this.setState((state) => {
       const filesList = [...state.fileList, ...files];
       return {
@@ -123,6 +129,13 @@ export default class DragAndDrop extends React.Component<Props, State> {
       };
     });
   }
+  uploadImage() {
+    var form = new FormData();
+    this.state.fileList.forEach((file) => {
+      form.append("images", file);
+    });
+    axios.post("/upload", form);
+  }
   render() {
     return (
       <div>
@@ -170,6 +183,19 @@ export default class DragAndDrop extends React.Component<Props, State> {
             <div className={"mb-3"}>Drop files here or click to upload.</div>
           )}
         </div>
+        <Row>
+          <Col className={"text-right"}>
+            <Button
+              onClick={this.uploadImage}
+              className={"mt-4"}
+              variant="primary"
+              size="lg"
+              disabled={this.state.fileListLoaded.length === 0}
+            >
+              Upload
+            </Button>
+          </Col>
+        </Row>
       </div>
     );
   }
