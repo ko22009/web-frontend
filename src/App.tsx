@@ -1,7 +1,7 @@
-import "./App.scss";
+import "@/App.scss";
 import React from "react";
-import routes from "./routes";
-import Header from "./Components/Header";
+import routes from "@/routes";
+import Header from "@/Components/Header";
 import { Container } from "react-bootstrap";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";

@@ -1,5 +1,5 @@
 import React, { ChangeEvent, createRef, DragEvent, MouseEvent } from "react";
-import "./DragAndDrop.css";
+import "@/DragAndDrop.css";
 import { Button, Col, FormFile, Row } from "react-bootstrap";
 import axios from "axios";
 

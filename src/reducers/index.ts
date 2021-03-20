@@ -1,6 +1,18 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import {
+  combineReducers,
+  configureStore,
+  getDefaultMiddleware,
+} from "@reduxjs/toolkit";
 import { persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage";
+import {
+  FLUSH,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+  REHYDRATE,
+} from "redux-persist/es/constants";
 
 const context = require.context("./", false, /\.ts$/);
 const keys = context.keys().filter((key) => !key.includes("index"));
@@ -26,6 +38,12 @@ const persistedReducer = persistReducer(
 
 const configure = configureStore({
   reducer: persistedReducer,
+  devTools: process.env.NODE_ENV !== "production",
+  middleware: getDefaultMiddleware({
+    serializableCheck: {
+      ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+    },
+  }),
 });
 
 persistStore(configure);

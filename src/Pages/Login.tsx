@@ -1,6 +1,6 @@
 import { Button, Form } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import { auth } from "../reducers/user";
+import { auth } from "@/reducers/user";
 
 export default function Login() {
   const dispatch = useDispatch();
