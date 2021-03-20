@@ -29,6 +29,36 @@ export default function Header() {
                 About
               </NavLink>
             </Nav.Item>
+            <Nav.Item>
+              <NavLink
+                className={"nav-link"}
+                exact={true}
+                activeClassName="active"
+                to="/login"
+              >
+                Login
+              </NavLink>
+            </Nav.Item>
+            <Nav.Item>
+              <NavLink
+                className={"nav-link"}
+                exact={true}
+                activeClassName="active"
+                to="/register"
+              >
+                Register
+              </NavLink>
+            </Nav.Item>
+            <Nav.Item>
+              <NavLink
+                className={"nav-link"}
+                exact={true}
+                activeClassName="active"
+                to="/logout"
+              >
+                Logout
+              </NavLink>
+            </Nav.Item>
           </Nav>
         </Navbar.Collapse>
       </Container>
