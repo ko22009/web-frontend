@@ -5,16 +5,18 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
     "@reduxjs/toolkit": "^1.5.0",
+    "@storybook/preset-ant-design": "^0.0.2",
+    "@types/jquery": "^3.5.5",
     "@types/node": "^12.20.6",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.2",
     "@types/react-redux": "^7.1.16",
     "@types/react-router-dom": "^5.1.7",
     "@types/webpack-env": "^1.16.0",
+    "antd": "^4.15.0",
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "husky": "^5.1.1",
-    "@types/jquery": "^3.5.5",
     "jquery": "^3.6.0",
     "lint-staged": "^10.5.4",
     "node-sass": "^5.0.0",
@@ -36,12 +38,24 @@
     "extends": [
       "react-app",
       "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
     ]
   },
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "serve": "serve -s build"
+    "serve": "serve -s build",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "browserslist": {
     "production": [
@@ -64,5 +78,13 @@
     "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
       "prettier --write"
     ]
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^6.2.2",
+    "@storybook/addon-essentials": "^6.2.2",
+    "@storybook/addon-links": "^6.2.2",
+    "@storybook/node-logger": "^6.2.2",
+    "@storybook/preset-create-react-app": "^3.1.7",
+    "@storybook/react": "^6.2.2"
   }
 }
