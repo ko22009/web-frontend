@@ -54,6 +54,7 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "serve": "serve -s build",
+    "deploy-storybook": "storybook-to-ghpages",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"
   },
@@ -86,6 +87,7 @@
     "@storybook/node-logger": "^6.2.2",
     "@storybook/preset-create-react-app": "^3.1.7",
     "@storybook/react": "^6.2.2",
+    "@storybook/storybook-deployer": "^2.8.7",
     "chromatic": "^5.7.1"
   }
 }
