@@ -3,7 +3,6 @@ import React from "react";
 import routes from "@/routes";
 import Header from "@/Components/Header";
 import { Container } from "react-bootstrap";
-
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 type Props = {};
@@ -28,7 +27,7 @@ export default class App extends React.Component<Props> {
     return (
       <Router>
         <Header />
-        <Container>
+        <Container className={"p-4"}>
           <Switch>
             {routes.map((route, i) => (
               <Route

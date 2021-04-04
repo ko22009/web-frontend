@@ -1,8 +1,11 @@
 import { RouteProps } from "react-router";
 import Home from "@/Pages/Home";
-import About from "@/Pages/About";
+import Private from "@/Pages/Private";
+import Examples from "@/Pages/Examples";
 import Login from "@/Pages/Login";
 import Register from "@/Pages/Register";
+import Permissions from "@/Pages/Permissions";
+import NotFound from "@/Pages/NotFound";
 
 export interface SubRouteProps extends RouteProps {
   routes?: RouteProps[];
@@ -14,8 +17,12 @@ const routes: SubRouteProps[] = [
     component: Home,
   },
   {
-    path: "/about",
-    component: About,
+    path: "/examples",
+    component: Examples,
+  },
+  {
+    path: "/private",
+    component: Private,
   },
   {
     path: "/login",
@@ -24,6 +31,14 @@ const routes: SubRouteProps[] = [
   {
     path: "/register",
     component: Register,
+  },
+  {
+    path: "/permissions",
+    component: Permissions,
+  },
+  {
+    path: "*",
+    component: NotFound,
   },
 ];
 

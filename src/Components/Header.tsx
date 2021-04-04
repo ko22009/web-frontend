@@ -5,7 +5,14 @@ export default function Header() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <NavLink
+          className={"navbar-brand"}
+          exact={true}
+          activeClassName="active"
+          to="/"
+        >
+          React-Bootstrap
+        </NavLink>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
@@ -14,9 +21,9 @@ export default function Header() {
                 className={"nav-link"}
                 exact={true}
                 activeClassName="active"
-                to="/"
+                to="/examples"
               >
-                Home
+                Examples
               </NavLink>
             </Nav.Item>
             <Nav.Item>
@@ -24,9 +31,19 @@ export default function Header() {
                 className={"nav-link"}
                 exact={true}
                 activeClassName="active"
-                to="/about"
+                to="/private"
               >
-                About
+                Private
+              </NavLink>
+            </Nav.Item>
+            <Nav.Item>
+              <NavLink
+                className={"nav-link"}
+                exact={true}
+                activeClassName="active"
+                to="/permissions"
+              >
+                Permissions
               </NavLink>
             </Nav.Item>
             <Nav.Item>

@@ -1,0 +1,19 @@
+.section {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.action {
+    display: flex;
+    padding: 3px 8px;
+    right: 0;
+    top: 0;
+    line-height: 1;
+    font-size: 75%;
+    margin-top: 5px;
+    background: #874fbf;
+    color: white;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}

@@ -1,0 +1,31 @@
+.permissionTabTable {
+    margin: 0;
+}
+
+.permissionTabTable th, .permissionTabTable td {
+    min-width: 250px;
+}
+
+.permissionTabTable.active-first tr:first-child td {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.permissionTabTable .section {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.permissionTabTable .permission-add {
+    display: flex;
+    padding: 3px 8px;
+    right: 0;
+    top: 0;
+    line-height: 1;
+    font-size: 75%;
+    margin-top: 5px;
+    background: #874fbf;
+    color: white;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
