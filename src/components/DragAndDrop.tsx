@@ -1,7 +1,9 @@
 import React, { ChangeEvent, createRef, DragEvent, MouseEvent } from "react";
 import "./DragAndDrop.css";
-import { Button, Col, FormFile, Row } from "react-bootstrap";
 import axios from "axios";
+import Row from "@/components/Row";
+import Col from "@/components/Col";
+import Button from "@/components/Button";
 
 type Props = {};
 type State = {
@@ -139,7 +141,8 @@ export default class DragAndDrop extends React.Component<Props, State> {
   render() {
     return (
       <div>
-        <FormFile.Input
+        <input
+          type="file"
           multiple
           accept=".jpg, .png"
           onChange={this.onChangeFile}
@@ -167,29 +170,31 @@ export default class DragAndDrop extends React.Component<Props, State> {
                     onClick={(e) => e.stopPropagation()}
                   >
                     <img src={file} />
-                    <button
+                    <Button
                       onClick={() => this.removeItem(i)}
-                      type="button"
                       className="close"
+                      type="primary"
+                      danger
+                      size="small"
                       aria-label="Close"
                     >
                       <span aria-hidden="true">&times;</span>
-                    </button>
+                    </Button>
                   </div>
                 );
               })}
             </div>
           ) : (
-            <div className={"mb-3"}>Drop files here or click to upload.</div>
+            <div style={{ marginBottom: "1rem" }}>
+              Drop files here or click to upload.
+            </div>
           )}
         </div>
         <Row>
-          <Col className={"text-right"}>
+          <Col style={{ marginTop: "10px", marginLeft: "auto" }}>
             <Button
               onClick={this.uploadImage}
-              className={"mt-4"}
-              variant="primary"
-              size="lg"
+              type="default"
               disabled={this.state.fileListLoaded.length === 0}
             >
               Upload

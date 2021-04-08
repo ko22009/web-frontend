@@ -1,11 +1,7 @@
-@import "~bootstrap/dist/css/bootstrap.css";
-@import "~antd/dist/antd.css";
-
-html,
-body {
-  height: 100%;
+.d-none {
+  display: none;
 }
 
-.bi {
-  line-height: 0.9;
+.row {
+  display: flex;
 }

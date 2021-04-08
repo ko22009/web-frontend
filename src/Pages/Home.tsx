@@ -1,13 +1,5 @@
-import DragAndDrop from "@/Components/DragAndDrop";
-import { Col, Row } from "react-bootstrap";
+import DragAndDrop from "@/components/DragAndDrop";
 
 export default function Home() {
-  return (
-    <Row>
-      <Col>
-        <div className="pb-4" />
-        <DragAndDrop />
-      </Col>
-    </Row>
-  );
+  return <DragAndDrop />;
 }
