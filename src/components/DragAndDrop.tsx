@@ -1,9 +1,9 @@
 import React, { ChangeEvent, createRef, DragEvent, MouseEvent } from "react";
 import "./DragAndDrop.css";
 import axios from "axios";
-import Row from "@/components/Row";
-import Col from "@/components/Col";
 import Button from "@/components/Button";
+import Grid from "@/components/layout/Grid";
+import GridItem from "@/components/layout/GridItem";
 
 type Props = {};
 type State = {
@@ -140,58 +140,58 @@ export default class DragAndDrop extends React.Component<Props, State> {
   }
   render() {
     return (
-      <div>
-        <input
-          type="file"
-          multiple
-          accept=".jpg, .png"
-          onChange={this.onChangeFile}
-          className={"d-none"}
-          ref={this.file}
-        />
-        <div
-          className={
-            this.state.inDropZone
-              ? "drag-drop-zone inside-drag-area"
-              : "drag-drop-zone"
-          }
-          onDrop={(e) => this.handleDrop(e)}
-          onDragOver={(e) => this.handleDragOver(e)}
-          onDragLeave={(e) => this.handleDragLeave(e)}
-          onClick={(e) => this.openLoadFile(e)}
-        >
-          {this.state.fileListLoaded.length > 0 ? (
-            <div className="gallery">
-              {this.state.fileListLoaded.map((file, i) => {
-                return (
-                  <div
-                    className={"box"}
-                    key={i}
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <img src={file} />
-                    <Button
-                      onClick={() => this.removeItem(i)}
-                      className="close"
-                      type="primary"
-                      danger
-                      size="small"
-                      aria-label="Close"
+      <Grid direction="horizontal">
+        <GridItem>
+          <input
+            type="file"
+            multiple
+            accept=".jpg, .png"
+            onChange={this.onChangeFile}
+            className="none"
+            ref={this.file}
+          />
+          <div
+            className={
+              this.state.inDropZone
+                ? "drag-drop-zone inside-drag-area"
+                : "drag-drop-zone"
+            }
+            onDrop={(e) => this.handleDrop(e)}
+            onDragOver={(e) => this.handleDragOver(e)}
+            onDragLeave={(e) => this.handleDragLeave(e)}
+            onClick={(e) => this.openLoadFile(e)}
+          >
+            {this.state.fileListLoaded.length > 0 ? (
+              <div className="gallery">
+                {this.state.fileListLoaded.map((file, i) => {
+                  return (
+                    <div
+                      className={"box"}
+                      key={i}
+                      onClick={(e) => e.stopPropagation()}
                     >
-                      <span aria-hidden="true">&times;</span>
-                    </Button>
-                  </div>
-                );
-              })}
-            </div>
-          ) : (
-            <div style={{ marginBottom: "1rem" }}>
-              Drop files here or click to upload.
-            </div>
-          )}
-        </div>
-        <Row>
-          <Col style={{ marginTop: "10px", marginLeft: "auto" }}>
+                      <img src={file} />
+                      <Button
+                        onClick={() => this.removeItem(i)}
+                        className="close"
+                        type="primary"
+                        danger
+                        size="small"
+                        aria-label="Close"
+                      >
+                        <span aria-hidden="true">&times;</span>
+                      </Button>
+                    </div>
+                  );
+                })}
+              </div>
+            ) : (
+              <div style={{ marginBottom: "1rem" }}>
+                Drop files here or click to upload.
+              </div>
+            )}
+          </div>
+          <div style={{ marginTop: "10px", textAlign: "right" }}>
             <Button
               onClick={this.uploadImage}
               type="default"
@@ -199,9 +199,9 @@ export default class DragAndDrop extends React.Component<Props, State> {
             >
               Upload
             </Button>
-          </Col>
-        </Row>
-      </div>
+          </div>
+        </GridItem>
+      </Grid>
     );
   }
 }

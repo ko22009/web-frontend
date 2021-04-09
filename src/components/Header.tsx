@@ -1,6 +1,7 @@
-import { Link, useLocation } from "react-router-dom";
-
-const paths = [
+import Menu, { PathItem } from "@/components/Menu";
+import Grid from "@/components/layout/Grid";
+import GridItem from "@/components/layout/GridItem";
+const paths: PathItem[] = [
   {
     title: "Home",
     url: "",
@@ -16,19 +17,12 @@ const paths = [
 ];
 
 const Header = () => {
-  const location = useLocation();
-  const url = location.pathname.replace(/\?.*$/, "").replace(/\/$/, "");
-  const indexSelect = paths.findIndex((path) => path.url === url);
   return (
-    <ul>
-      {paths.map((path, i) => {
-        return (
-          <li key={i} className={`${indexSelect === i ? "active" : ""}`}>
-            <Link to={path.url}>{path.title}</Link>
-          </li>
-        );
-      })}
-    </ul>
+    <GridItem className="gray-bg">
+      <Grid wrapped>
+        <Menu paths={paths} />
+      </Grid>
+    </GridItem>
   );
 };
 

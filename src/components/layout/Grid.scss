@@ -1,0 +1,19 @@
+@import "utils";
+
+.grid {
+  display: grid;
+  height: 100%;
+  @include wrapped;
+}
+
+.inline-grid {
+  display: inline-grid;
+}
+
+.grid-horizontal {
+  grid-auto-flow: column;
+}
+
+.grid-vertical {
+  grid-auto-flow: row;
+}

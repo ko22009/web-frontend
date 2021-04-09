@@ -1,0 +1,26 @@
+.menu {
+  a {
+    display: inline-block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  li a:hover:not(.active) {
+    background-color: #ddd;
+  }
+  li a.active {
+    color: white;
+    background-color: #008cba;
+  }
+  &-horizontal {
+    overflow: hidden;
+    li {
+      float: left;
+    }
+  }
+  &-vertical {
+    a {
+      display: block;
+    }
+  }
+}

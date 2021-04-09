@@ -1,0 +1,5 @@
+@import "utils";
+
+.grid-item {
+  @include wrapped;
+}

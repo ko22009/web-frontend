@@ -1,0 +1,16 @@
+@import "reset.css";
+@import "colors";
+@import "utils";
+@import "fonts";
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: "Rubik", sans-serif, arial, Tahoma, verdana;
+  font-weight: 300;
+  font-style: normal;
+}
