@@ -26,7 +26,13 @@ export default class App extends React.Component<Props> {
   }
   render() {
     return (
-      <Grid direction={"vertical"} gridTemplateRows="auto 1fr auto">
+      <Grid
+        direction={"vertical"}
+        gridTemplateRows="auto 1fr auto"
+        style={{
+          height: "100%",
+        }}
+      >
         <Router>
           <GridItem>
             <Header />

@@ -1,10 +1,11 @@
 import Menu, { PathItem } from "@/components/Menu";
-import Grid from "@/components/layout/Grid";
 import GridItem from "@/components/layout/GridItem";
+import Grid from "@/components/layout/Grid";
+
 const paths: PathItem[] = [
   {
     title: "Home",
-    url: "",
+    url: "/",
   },
   {
     title: "Private",
@@ -13,6 +14,13 @@ const paths: PathItem[] = [
   {
     title: "Examples",
     url: "/examples",
+  },
+  {
+    title: <span className="material-icons-outlined">light_mode</span>,
+    float: "right",
+    onClick: function () {
+      document.body.classList.toggle("dark");
+    },
   },
 ];
 

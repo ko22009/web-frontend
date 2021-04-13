@@ -1,49 +1,36 @@
-import { Link, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Menu.scss";
+import { CSSProperties, MouseEventHandler } from "react";
 
 export interface PathItem {
-  title: string;
-  url: string;
-}
-
-export enum MenuDirection {
-  horizontal,
-  vertical,
+  title: any;
+  url?: string;
+  float?: string;
+  onClick?: MouseEventHandler<HTMLAnchorElement>;
 }
 
 type Props = {
   paths: PathItem[];
-  direction?: keyof typeof MenuDirection;
 };
 
 const Menu = (props: Props) => {
-  const location = useLocation();
-  const url = location.pathname.replace(/\?.*$/, "").replace(/\/$/, "");
-  const indexSelect = props.paths.findIndex((path) => path.url === url);
-  const className = [
-    "menu",
-    `menu-${
-      props.direction
-        ? props.direction
-        : MenuDirection[MenuDirection.horizontal]
-    }`,
-  ].join(" ");
-  const classNameLink = (i: number) => {
-    return ["gray", indexSelect === i ? "active" : ""].join(" ");
-  };
-  return (
-    <ul className={className}>
-      {props.paths.map((path, i) => {
-        return (
-          <li key={i}>
-            <Link className={classNameLink(i)} to={path.url}>
-              {path.title}
-            </Link>
-          </li>
-        );
-      })}
-    </ul>
-  );
+  const output = props.paths.map((path, i) => {
+    const float = { float: path.float ?? "" } as CSSProperties;
+    return (
+      <li key={i} style={float}>
+        {(path.url !== undefined && (
+          <NavLink exact activeClassName="active" to={path.url}>
+            {path.title}
+          </NavLink>
+        )) || (
+          <a href="#" onClick={path.onClick}>
+            {path.title}
+          </a>
+        )}
+      </li>
+    );
+  });
+  return <ul className="menu">{output}</ul>;
 };
 
 export default Menu;

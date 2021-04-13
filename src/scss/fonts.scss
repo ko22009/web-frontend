@@ -1,31 +1,87 @@
+@import "fonts.variables";
+
 @font-face {
-  font-family: "Rubik";
-  src: url("fonts/Rubik-Light.ttf") format("truetype");
+  font-family: "Roboto";
+  src: url("fonts/roboto/Roboto-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
-  font-display: swap;
 }
 
 @font-face {
-  font-family: "Rubik";
-  src: url("fonts/Rubik-LightItalic.ttf") format("truetype");
+  font-family: "Roboto";
+  src: url("fonts/roboto/Roboto-LightItalic.ttf") format("truetype");
   font-weight: 300;
   font-style: italic;
-  font-display: swap;
 }
 
 @font-face {
-  font-family: "Rubik";
-  src: url("fonts/Rubik-Italic.ttf") format("truetype");
-  font-weight: normal;
+  font-family: "Roboto";
+  src: url("fonts/roboto/Roboto-Italic.ttf") format("truetype");
+  font-weight: 400;
   font-style: italic;
-  font-display: swap;
 }
 
 @font-face {
-  font-family: "Rubik";
-  src: url("fonts/Rubik-Regular.ttf") format("truetype");
-  font-weight: normal;
+  font-family: "Roboto";
+  src: url("fonts/roboto/Roboto-Regular.ttf") format("truetype");
+  font-weight: 400;
   font-style: normal;
-  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("fonts/roboto/Roboto-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("fonts/roboto/Roboto-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+body {
+  @include typography-body;
+}
+
+h1 {
+  @include typography-headline1;
+}
+
+h2 {
+  @include typography-headline2;
+}
+
+h3 {
+  @include typography-headline3;
+}
+
+h4 {
+  @include typography-headline4;
+}
+
+h5 {
+  @include typography-headline5;
+}
+
+h6 {
+  @include typography-headline6;
+}
+
+.subtitle {
+  @include typography-subtitle;
+}
+
+.size-small {
+  @include typography-small;
+}
+
+.caption {
+  @include typography-caption;
+}
+
+p {
+  margin: 10px 0;
 }

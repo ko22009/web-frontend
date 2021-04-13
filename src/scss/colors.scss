@@ -1,5 +1,13 @@
+@import "colors.variables";
+
 .gray-bg {
   background: #f3f3f3;
+}
+
+.dark {
+  .gray-bg {
+    background: #3d3838ff;
+  }
 }
 
 .gray-border {
@@ -8,4 +16,8 @@
 
 .gray {
   color: #666;
+}
+
+.dark {
+  background: $dark-bg;
 }

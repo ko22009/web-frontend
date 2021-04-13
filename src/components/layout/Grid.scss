@@ -2,7 +2,6 @@
 
 .grid {
   display: grid;
-  height: 100%;
   @include wrapped;
 }
 
