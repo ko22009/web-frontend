@@ -51,7 +51,7 @@ export default class App extends React.Component<Props> {
               ))}
             </Switch>
           </GridItem>
-          <GridItem className="gray-bg">
+          <GridItem className="bg-gray">
             <Grid wrapped>
               <footer style={{ textAlign: "center", padding: "20px" }}>
                 Ant Design ©2018 Created by Ant UED

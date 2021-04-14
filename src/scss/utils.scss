@@ -1,3 +1,15 @@
+@use "sass:selector";
+
+@mixin dark-mode() {
+  @at-root #{".dark " &} {
+    @content;
+  }
+}
+
 .none {
   display: none;
+}
+
+.no-select {
+  user-select: none;
 }

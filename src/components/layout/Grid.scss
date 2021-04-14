@@ -1,8 +1,9 @@
-@import "utils";
-
 .grid {
   display: grid;
-  @include wrapped;
+  &-wrapped {
+    max-width: 960px;
+    margin: 0 auto;
+  }
 }
 
 .inline-grid {

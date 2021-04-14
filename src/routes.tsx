@@ -1,8 +1,8 @@
 import { RouteProps } from "react-router";
-import Home from "@/Pages/Home";
-import Private from "@/Pages/Private";
-import Examples from "@/Pages/Examples";
-import NotFound from "@/Pages/NotFound";
+import Home from "@/pages/Home";
+import Private from "@/pages/Private";
+import Examples from "@/pages/examples";
+import NotFound from "@/pages/NotFound";
 
 export interface SubRouteProps extends RouteProps {
   routes?: RouteProps[];

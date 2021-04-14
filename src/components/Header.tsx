@@ -26,7 +26,7 @@ const paths: PathItem[] = [
 
 const Header = () => {
   return (
-    <GridItem className="gray-bg">
+    <GridItem className="bg-gray">
       <Grid wrapped>
         <Menu paths={paths} />
       </Grid>
