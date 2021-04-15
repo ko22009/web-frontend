@@ -14,6 +14,7 @@ const paths: PathItem[] = [
   {
     title: "Examples",
     url: "/examples",
+    openInNewWindow: true,
   },
   {
     title: <span className="material-icons-outlined">light_mode</span>,

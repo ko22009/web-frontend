@@ -7,6 +7,7 @@ export interface PathItem {
   url?: string;
   float?: string;
   onClick?: MouseEventHandler<HTMLAnchorElement>;
+  openInNewWindow?: boolean;
 }
 
 type Props = {
@@ -19,7 +20,12 @@ const Menu = (props: Props) => {
     return (
       <li key={i} style={float}>
         {(path.url !== undefined && (
-          <NavLink exact activeClassName="active" to={path.url}>
+          <NavLink
+            target={path.openInNewWindow ? "_blank" : ""}
+            exact
+            activeClassName="active"
+            to={path.url}
+          >
             {path.title}
           </NavLink>
         )) || (

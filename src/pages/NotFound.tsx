@@ -1,7 +1,8 @@
 import GridItem from "@/components/layout/GridItem";
 import Grid from "@/components/layout/Grid";
+import Main from "@/pages/Main";
 
-export default function NotFound() {
+function NotFound() {
   return (
     <Grid wrapped>
       <GridItem gap>
@@ -10,3 +11,5 @@ export default function NotFound() {
     </Grid>
   );
 }
+
+export default Main(NotFound);

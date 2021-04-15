@@ -14,6 +14,14 @@ type State = {
 
 export default class DragAndDrop extends React.Component<Props, State> {
   private file: React.RefObject<HTMLInputElement> = createRef<HTMLInputElement>();
+  componentDidMount() {
+    ["dragenter", "dragover", "dragleave", "drop"].forEach((eventName) => {
+      document.addEventListener(eventName, (event) => {
+        event.preventDefault();
+        event?.stopPropagation();
+      });
+    });
+  }
   constructor(props: Props) {
     super(props);
     this.handleDragLeave = this.handleDragLeave.bind(this);
