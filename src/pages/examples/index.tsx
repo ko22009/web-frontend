@@ -1,5 +1,6 @@
 import GridItem from "@/components/layout/GridItem";
 import Grid from "@/components/layout/Grid";
+import React from "react";
 
 export default function Index() {
   return (

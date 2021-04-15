@@ -2,7 +2,7 @@ import React from "react";
 import { TypeGap, styleGap } from "@/utils/gap";
 
 type Props = {
-  children: JSX.Element[] | JSX.Element;
+  children?: React.ReactNode;
   className?: string;
   style?: React.CSSProperties;
   gap?: keyof typeof TypeGap | boolean;
