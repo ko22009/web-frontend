@@ -1,6 +1,5 @@
 import GridItem from "@/components/layout/GridItem";
 import Grid from "@/components/layout/Grid";
-import Main from "@/pages/Main";
 
 function NotFound() {
   return (
@@ -12,4 +11,4 @@ function NotFound() {
   );
 }
 
-export default Main(NotFound);
+export default NotFound;

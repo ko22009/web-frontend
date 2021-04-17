@@ -1,13 +1,16 @@
-import GridItem from "@/components/layout/GridItem";
-import Grid from "@/components/layout/Grid";
 import React from "react";
+import { Route, RouteComponentProps } from "react-router-dom";
+import Examples from "@/pages/examples/Examples";
+import Example from "@/pages/examples/Example";
+import { CustomSwitch } from "@/routes";
 
-export default function Index() {
+function Index(route: RouteComponentProps) {
   return (
-    <Grid wrapped>
-      <GridItem gap>
-        <div>Example Pages</div>
-      </GridItem>
-    </Grid>
+    <CustomSwitch>
+      <Route exact path={`${route.match.path}`} component={Examples} />
+      <Route exact path={`${route.match.path}/:id`} component={Example} />
+    </CustomSwitch>
   );
 }
+
+export default Index;
