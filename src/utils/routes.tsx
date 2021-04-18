@@ -1,8 +1,5 @@
-import { RouteProps, SwitchProps } from "react-router";
-import Home from "@/pages/Home";
-import Private from "@/pages/Private";
+import { SwitchProps } from "react-router";
 import NotFound from "@/pages/NotFound";
-import Examples from "@/pages/examples";
 import Main from "@/pages/Main";
 import { Route, RouteComponentProps, Switch } from "react-router-dom";
 
@@ -27,21 +24,3 @@ export function topLink(
   }
   return path;
 }
-
-const routes: RouteProps[] = [
-  {
-    path: "/",
-    component: Home,
-    exact: true,
-  },
-  {
-    path: "/examples",
-    component: Examples,
-  },
-  {
-    path: "/private",
-    component: Private,
-  },
-];
-
-export default routes;

@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import "./Menu.scss";
+import styled from "styled-components";
 import { CSSProperties, MouseEventHandler } from "react";
 
 export interface PathItem {
@@ -7,30 +7,61 @@ export interface PathItem {
   url?: string;
   float?: string;
   onClick?: MouseEventHandler<HTMLAnchorElement>;
+  exact?: boolean;
 }
 
 type Props = {
   paths: PathItem[];
 };
 
-const Menu = (props: Props) => {
+const Menu = styled.ul``;
+
+const MenuItem = styled.ul`
+  float: left;
+`;
+
+const textWhite = "#fff";
+const activeBlue = "#008cba";
+
+const linkStyles = `display: inline-block;
+  text-decoration: none;
+  padding: 15px 16px;
+  color: inherit;
+  &.active {
+      color: ${textWhite};
+      background-color: ${activeBlue};
+  }`;
+
+const Link = styled.a`
+  ${linkStyles}
+`;
+
+const StyledNavLink = styled(NavLink)`
+  ${linkStyles}
+`;
+
+function menu(props: Props) {
   const output = props.paths.map((path, i) => {
     const float = { float: path.float ?? "" } as CSSProperties;
     return (
-      <li key={i} style={float}>
+      <MenuItem key={i} style={float}>
         {(path.url !== undefined && (
-          <NavLink exact activeClassName="active" to={path.url}>
+          <StyledNavLink
+            exact={path.exact}
+            activeClassName="active"
+            to={path.url}
+          >
             {path.title}
-          </NavLink>
+          </StyledNavLink>
         )) || (
-          <a href="#" onClick={path.onClick}>
+          <Link href="#" onClick={path.onClick}>
             {path.title}
-          </a>
+          </Link>
         )}
-      </li>
+      </MenuItem>
     );
   });
-  return <ul className="menu">{output}</ul>;
-};
+  return <Menu>{output}</Menu>;
+}
 
-export default Menu;
+export default menu;

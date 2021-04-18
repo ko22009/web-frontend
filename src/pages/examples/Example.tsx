@@ -3,7 +3,7 @@ import Grid from "@/components/layout/Grid";
 import Main from "@/pages/Main";
 import React from "react";
 import { RouteComponentProps } from "react-router-dom";
-import { topLink } from "@/routes";
+import { topLink } from "@/utils/routes";
 
 function Example(route: RouteComponentProps) {
   return (

@@ -1,7 +1,14 @@
 import React from "react";
+import styled from "styled-components";
 
-const Button = (props: any) => {
-  return <button {...props} />;
-};
+const Button = styled.button`
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+`;
 
-export default Button;
+function button(props: any) {
+  return <Button {...props} />;
+}
+
+export default button;

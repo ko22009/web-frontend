@@ -6,6 +6,7 @@ const paths: PathItem[] = [
   {
     title: "Home",
     url: "/",
+    exact: true,
   },
   {
     title: "Private",

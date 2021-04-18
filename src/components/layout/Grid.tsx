@@ -1,9 +1,9 @@
 import React from "react";
-import "./Grid.scss";
+import styled from "styled-components";
 
 export enum GridDirection {
-  horizontal,
-  vertical,
+  horizontal = "column",
+  vertical = "row",
 }
 
 interface IGrid {
@@ -19,7 +19,20 @@ interface IGrid {
   wrapped?: boolean;
 }
 
-const Grid = (props: IGrid) => {
+const Grid = styled.div<IGrid>`
+  display: ${(props) => (props.inline ? "inline-grid" : "grid")};
+  grid-auto-flow: ${(props) =>
+    props.direction
+      ? GridDirection[props.direction]
+      : GridDirection.horizontal};
+  ${(props) =>
+    props.wrapped &&
+    `
+      max-width: 960px;
+      margin: 0 auto;`}
+`;
+
+function grid(props: IGrid) {
   const style: React.CSSProperties = {
     ...props.style,
     gridTemplateColumns: props.gridTemplateColumns,
@@ -27,22 +40,16 @@ const Grid = (props: IGrid) => {
     columnGap: props.columnGap,
     rowGap: props.rowGap,
   };
-  let className = ["grid"];
-  className.push(
-    `grid-${
-      props.direction
-        ? props.direction
-        : GridDirection[GridDirection.horizontal]
-    }`
-  );
-  if (props.inline) className.push("inline-grid");
-  if (props.wrapped) className.push("grid-wrapped");
-  if (props.className) className.push(props.className);
   return (
-    <div className={className.join(" ")} style={style}>
+    <Grid
+      wrapped={props.wrapped}
+      inline={props.inline}
+      direction={props.direction}
+      style={style}
+    >
       {props.children}
-    </div>
+    </Grid>
   );
-};
+}
 
-export default Grid;
+export default grid;

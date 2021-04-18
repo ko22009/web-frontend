@@ -1,8 +1,1 @@
-- typescript
-- react
-- react-router
-- redux
-- axios
-- twitter bootstrap 4
-- jquery 3
-- prettier
+only functional components, no const and no classes.

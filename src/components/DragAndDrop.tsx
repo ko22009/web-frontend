@@ -1,5 +1,5 @@
 import React, { ChangeEvent, createRef, DragEvent, MouseEvent } from "react";
-import "./DragAndDrop.scss";
+//import "./DragAndDrop.scss";
 import axios from "axios";
 import Button from "@/components/Button";
 import Grid from "@/components/layout/Grid";
