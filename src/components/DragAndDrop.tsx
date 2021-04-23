@@ -182,10 +182,6 @@ export default class DragAndDrop extends React.Component<Props, State> {
                       <Button
                         onClick={() => this.removeItem(i)}
                         className="close"
-                        type="primary"
-                        danger
-                        size="small"
-                        aria-label="Close"
                       >
                         <span aria-hidden="true">&times;</span>
                       </Button>
@@ -202,7 +198,6 @@ export default class DragAndDrop extends React.Component<Props, State> {
           <div style={{ marginTop: "10px", textAlign: "right" }}>
             <Button
               onClick={this.uploadImage}
-              type="default"
               disabled={this.state.fileListLoaded.length === 0}
             >
               Upload

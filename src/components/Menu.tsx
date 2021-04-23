@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { CSSProperties, MouseEventHandler } from "react";
+import colors from "@/styled/global/colors";
 
 export interface PathItem {
   title: any;
@@ -21,7 +22,6 @@ const MenuItem = styled.ul`
 `;
 
 const textWhite = "#fff";
-const activeBlue = "#008cba";
 
 const linkStyles = `display: inline-block;
   text-decoration: none;
@@ -29,7 +29,7 @@ const linkStyles = `display: inline-block;
   color: inherit;
   &.active {
       color: ${textWhite};
-      background-color: ${activeBlue};
+      background-color: ${colors.blue};
   }`;
 
 const Link = styled.a`

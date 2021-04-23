@@ -24,7 +24,7 @@ const Grid = styled.div<IGrid>`
   grid-auto-flow: ${(props) =>
     props.direction
       ? GridDirection[props.direction]
-      : GridDirection.horizontal};
+      : 'unset'};
   ${(props) =>
     props.wrapped &&
     `
