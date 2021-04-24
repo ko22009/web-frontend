@@ -29,10 +29,20 @@ const warning = {
   activeColor: colors.white,
 };
 
+const success = {
+  color: colors.white,
+  bg: colors.green,
+  border: colors.green,
+  activeBg: colors.greenDark,
+  activeBorder: colors.greenDark,
+  activeColor: colors.white,
+};
+
 const variantTheme: any = {
   normal,
   danger,
-  warning
+  warning,
+  success,
 };
 
 interface Theme {
@@ -60,6 +70,7 @@ const disabled = {
 enum Variant {
   danger,
   warning,
+  success,
 }
 
 interface Props {

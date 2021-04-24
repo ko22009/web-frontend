@@ -12,6 +12,7 @@ function Examples() {
       <ButtonExample />
       <Gap />
       <ImageExample />
+      <Gap />
       <TextExample />
     </Grid>
   );

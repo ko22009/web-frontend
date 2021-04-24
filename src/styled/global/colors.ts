@@ -12,6 +12,8 @@ const basicColors = {
   redDark: "#B22222",
   yellow: "#ffc107",
   yellowDark: "#eeaa19",
+  green: "#3cb371",
+  greenDark: "#2e8b57",
 };
 
 const colors = {
