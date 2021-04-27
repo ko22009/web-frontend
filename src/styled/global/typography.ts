@@ -57,7 +57,7 @@ h6 {
 }
 
 p {
-  margin: 1rem 0;
+  margin-bottom: 1rem;
 }
 `;
 
