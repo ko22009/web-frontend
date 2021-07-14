@@ -17,6 +17,10 @@ const paths: PathItem[] = [
     url: "/examples",
   },
   {
+    title: "Login",
+    url: "/login",
+  },
+  {
     title: <span className="material-icons-outlined">light_mode</span>,
     float: "right",
     onClick: function () {

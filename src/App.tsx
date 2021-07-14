@@ -5,6 +5,7 @@ import Home from "@/pages/Home";
 import Examples from "@/pages/examples";
 import Private from "@/pages/Private";
 import GlobalStyles from "@/styled/GlobalStyles";
+import Login from "@/pages/Login";
 
 export default class App extends React.Component {
   render() {
@@ -15,6 +16,7 @@ export default class App extends React.Component {
           <Route exact path="/" component={Home} />
           <Route path="/examples" component={Examples} />
           <Route path="/private" component={Private} />
+          <Route path="/login" component={Login} />
         </CustomSwitch>
       </Router>
     );
