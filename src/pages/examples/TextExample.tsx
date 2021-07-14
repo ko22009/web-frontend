@@ -6,7 +6,7 @@ function TextExample() {
     <>
       <h4>Text</h4>
       <div>
-        <p>
+        <div>
           <div
             className="clearfix"
             style={{
@@ -26,7 +26,7 @@ function TextExample() {
           doloremque eius, odio saepe sunt tempora ullam vel voluptates. Animi
           dignissimos ducimus fuga id ipsam laborum neque quia quos veniam
           voluptatem.
-        </p>
+        </div>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa
           doloremque eius, odio saepe sunt tempora ullam vel voluptates. Animi

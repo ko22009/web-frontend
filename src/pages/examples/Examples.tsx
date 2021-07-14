@@ -5,6 +5,8 @@ import ButtonExample from "@/pages/examples/ButtonExample";
 import ImageExample from "@/pages/examples/ImageExample";
 import TextExample from "@/pages/examples/TextExample";
 import { Gap } from "@/components/Gap";
+import RadioExample from "@/pages/examples/RadioExample";
+import CheckboxExample from "@/pages/examples/CheckboxExample";
 
 function Examples() {
   return (
@@ -14,6 +16,10 @@ function Examples() {
       <ImageExample />
       <Gap />
       <TextExample />
+      <Gap />
+      <RadioExample />
+      <Gap />
+      <CheckboxExample />
     </Grid>
   );
 }

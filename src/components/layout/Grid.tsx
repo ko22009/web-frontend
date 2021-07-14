@@ -19,12 +19,10 @@ interface IGrid {
   wrapped?: boolean;
 }
 
-const Grid = styled.div<IGrid>`
+const GridElement = styled.div<IGrid>`
   display: ${(props) => (props.inline ? "inline-grid" : "grid")};
   grid-auto-flow: ${(props) =>
-    props.direction
-      ? GridDirection[props.direction]
-      : 'unset'};
+    props.direction ? GridDirection[props.direction] : "unset"};
   ${(props) =>
     props.wrapped &&
     `
@@ -32,7 +30,7 @@ const Grid = styled.div<IGrid>`
       margin: 0 auto;`}
 `;
 
-function grid(props: IGrid) {
+function Grid(props: IGrid) {
   const style: React.CSSProperties = {
     ...props.style,
     gridTemplateColumns: props.gridTemplateColumns,
@@ -41,15 +39,15 @@ function grid(props: IGrid) {
     rowGap: props.rowGap,
   };
   return (
-    <Grid
+    <GridElement
       wrapped={props.wrapped}
       inline={props.inline}
       direction={props.direction}
       style={style}
     >
       {props.children}
-    </Grid>
+    </GridElement>
   );
 }
 
-export default grid;
+export default Grid;

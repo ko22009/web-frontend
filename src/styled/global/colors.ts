@@ -1,4 +1,5 @@
 const basicColors = {
+  blackLight: "rgba(0, 0, 0, 0.54)",
   black: "#424242",
   white: "#fff",
   dark: "#616161",

@@ -64,7 +64,7 @@ function invertTheme(theme: Theme) {
 
 const disabled = {
   bg: colors.grayLight,
-  color: colors.grayDark,
+  color: colors.gray,
 };
 
 enum Variant {
